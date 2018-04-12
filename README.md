@@ -49,6 +49,8 @@ O modelo **Just Do It** (JDI) consiste na seguinte estrutura:
 
 ### Preparar AKS
 
+Quick Start da Azure: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
+
 ### Subir Deployment e Services do DockerHub para AKS
 
 ### Push de Imagem para ACR
