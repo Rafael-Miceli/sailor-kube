@@ -39,6 +39,8 @@ O modelo **Just Do It** (JDI) consiste na seguinte estrutura:
 
 3 - Configure seu driver [hyper-v](https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#hyperv-driver) ou virtualbox(sem link para esse infelizmente =/) para user o KubeCtl
 
+> Lembrando que usando Hyper-V na etapa de ajustar seu driver de rede tem um gotcha que é: Seu driver de rede não pode estar compatilhado, se não você toma o erro (0x8000FFFF)
+
 4 - Para configurar Minikube com seu Hyer-V, abra o Powershell e execute o seguinte comando: `minikube start --vm-driver hyperv --kubernetes-version v1.7.3  --hyperv-virtual-switch nome-do-seu-switch`
 
 #### Output
