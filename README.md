@@ -43,24 +43,72 @@ O modelo **Just Do It** (JDI) consiste na seguinte estrutura:
 
 4 - Para configurar Minikube com seu Hyer-V, abra o Powershell e execute o seguinte comando: `minikube start --vm-driver hyperv --kubernetes-version v1.7.3  --hyperv-virtual-switch nome-do-seu-switch`
 
+> Tem outro a passo a passo mais completo muito bom: https://medium.com/@JockDaRock/minikube-on-windows-10-with-hyper-v-6ef0f4dc158c
+
 #### Output
 
 - Após a instalação, para verificar se obteve sucesso execute `kubectl get nodes` com Powershell e verifique se você possui um node, caso tenha alguma problema abra uma [Issue](https://github.com/Rafael-Miceli/sailor-kube/issues)
 
-### Subir Deployment para Kubernetes no Minikube
+### Subir Deployment e Service para Kubernetes no Minikube
 
-### Preparar AKS
+>Para mais informações a respeito do que é um [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) e um [Service](https://kubernetes.io/docs/concepts/services-networking/service/) no K8S
 
-Quick Start da Azure: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
+#### Porque e Objetivo:
 
-### Subir Deployment e Services do DockerHub para AKS
+Subindo sua aplicação no Minikube é perfeito para testar localmente PoCs (Prof of Concepts).
 
-### Push de Imagem para ACR
+#### Cenário inicial
 
-### Subir Deployment e Services da ACR para AKS
+- Minikube já instalado e configurado.
+
+#### Passo a Passo
+
+1 - Prepare um deployment de forma declarativa como o seguinte:
+
+```yml
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec: 
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+          name: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: nginx
+
+```
+
+2 - Execute o seguinte comando no powershell com o yml acima: `kubectl create -f .\yml-acima.yml`
+
+3 - Execute os seguinte comando para verificar se seu Deployment foi criado: `kubectl get dployments`. Deve aprecer o Deployment nginx com 2 replicas.
+
+4 - Execute os seguinte comando para verificar se seu Service foi criado: `kubectl get services`, deve aparecer seu service com o Ip Binded nele.
 
 
-Mais referências (porque nunca é demais):
+#### Output
+
+Para testar sua subida no Minikube pegue a porta que foi gerada pelo minikube do service que você subiu. Ou verifique se ele está no dashboard na porta 30000 do Ip da sua VM.
+
+
 
 - Transformar Compose para Kubernetes Deployments
 https://github.com/kubernetes/kompose
