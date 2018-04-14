@@ -108,6 +108,9 @@ spec:
 
 Para testar sua subida no Minikube pegue a porta que foi gerada pelo minikube do service que você subiu. Ou verifique se ele está no dashboard na porta 30000 do Ip da sua VM.
 
+### Preparar AKS
+
+Quick Start da Azure: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
 
 
 - Transformar Compose para Kubernetes Deployments
