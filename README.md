@@ -112,6 +112,11 @@ Para testar sua subida no Minikube pegue a porta que foi gerada pelo minikube do
 
 Quick Start da Azure: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
 
+### Trocar de contexto para Azure
+
+Caso você esteja usando seu Kubectl apontando para mais de um cluster lembre que o comando `kubectl config use-context [my-context]` troca o contexto.
+
+Para saber quais contextos 
 
 - Transformar Compose para Kubernetes Deployments
 https://github.com/kubernetes/kompose
