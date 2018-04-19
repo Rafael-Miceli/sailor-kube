@@ -116,7 +116,7 @@ Quick Start da Azure: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walk
 
 Caso você esteja usando seu Kubectl apontando para mais de um cluster lembre que o comando `kubectl config use-context [my-context]` troca o contexto.
 
-Para saber quais contextos 
+Para saber quais contextos você tem configurado analise seu `config` dentro da pasta `.kube` no diretório do seu usuário.
 
 - Transformar Compose para Kubernetes Deployments
 https://github.com/kubernetes/kompose
