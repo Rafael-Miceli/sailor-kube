@@ -1,4 +1,4 @@
-# sailor-kube
+# sailor kube
 
 ## Discalimer
 
@@ -119,6 +119,8 @@ Caso você esteja usando seu Kubectl apontando para mais de um cluster lembre qu
 Para saber quais contextos você tem configurado analise seu `config` dentro da pasta `.kube` no diretório do seu usuário.
 
 ## Referências:
+
+- Slide: https://pt.slideshare.net/RafaMiceli/k8-s-m-aks
 
 - https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
 - https://kubernetes.io/docs/reference/kubectl/overview/
