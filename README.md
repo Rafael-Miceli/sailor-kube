@@ -118,5 +118,18 @@ Caso você esteja usando seu Kubectl apontando para mais de um cluster lembre qu
 
 Para saber quais contextos você tem configurado analise seu `config` dentro da pasta `.kube` no diretório do seu usuário.
 
-- Transformar Compose para Kubernetes Deployments
-https://github.com/kubernetes/kompose
+## Referências:
+
+- https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
+- https://kubernetes.io/docs/reference/kubectl/overview/
+- https://github.com/kubernetes/minikube
+- https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app
+
+Video Aulas recomendadas: 
+
+- https://www.youtube.com/watch?v=hCMcQfGb4cA
+- https://app.pluralsight.com/library/courses/getting-started-kubernetes/table-of-contents
+- https://app.pluralsight.com/library/courses/docker-web-development/table-of-contents
+- https://app.pluralsight.com/library/courses/docker-images-containers-aspdotnet-core/table-of-contents
+
+- Transformar Compose para Kubernetes Deployments: https://github.com/kubernetes/kompose
